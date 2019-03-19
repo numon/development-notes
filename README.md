@@ -17,3 +17,4 @@
 * [Types of component](#Types of component)
 * [Higher-order-component](#Higher-order-component)
 * [Routing](#Routing)
+* [Lifting State Up](#Lifting State Up)
