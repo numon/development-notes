@@ -2,7 +2,7 @@
 
 
 Function in component 
-```javascript
+```jsx harmony
 
     constructor() {
   this.inputElement = React.createRef( )
