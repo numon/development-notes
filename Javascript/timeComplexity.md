@@ -1,3 +1,4 @@
+# Time complexity Algorithms
 
 ## O(1) time 
 1. Accessing Array Index (int a = ARR[5];)

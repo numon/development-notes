@@ -30,3 +30,17 @@
 #NodeJS
 
 * Worker threads
+
+# TODO:
+* finished with JS
+* Reg Exp
+* SELENIUM WebDriver
+* Cucumber
+* Python
+* JMeter
+* load testing
+* SQL
+* Linux
+* AWS
+* Web Socket 
+* Web workers
