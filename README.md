@@ -10,7 +10,7 @@
 
 
 # Javascript
-
+* [Data type](https://github.com/numon/development-notes/blob/master/Javascript/dataType.md)
 
 # React
 * [All about state](#All about state)
