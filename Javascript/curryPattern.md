@@ -55,5 +55,4 @@ instead of:
 match(something).equals(something, result).else(default);
 ```
 
-
 more read hear https://medium.com/front-end-weekly/javascript-es6-curry-functions-with-practical-examples-6ba2ced003b1
