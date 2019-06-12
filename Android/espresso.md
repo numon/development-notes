@@ -85,3 +85,25 @@ class MainActivityInstrumentationTest {
     }
 }
 ```
+
+```java
+public void testActionBarOverflow() {
+    // Make sure we hide the contextual action bar.
+    onView(withId(R.id.hide_contextual_action_bar))
+        .perform(click());
+
+    // Open the options menu OR open the overflow menu, depending on whether
+    // the device has a hardware or software overflow menu button.
+    openActionBarOverflowOrOptionsMenu(
+            ApplicationProvider.getApplicationContext());
+
+    // Click the item.
+    onView(withText("World"))
+        .perform(click());
+
+    // Verify that we have really clicked on the icon by checking
+    // the TextView content.
+    onView(withId(R.id.text_action_bar_result))
+        .check(matches(withText("World")));
+}
+```
