@@ -10,6 +10,14 @@ By default the rule will be initialised and the activity will be launched(onCrea
 Activity will be Destroyed(onPause, onStop, onDestroy) after running the @After method which in turn is called after every @Test Method
 The activity’s launch can be postponed by setting the launchActivity to false in the constructor of ActivityTestRule ,in that case you will have to manually launch the activity before the tests
 
+## API components
+The main components of Espresso include the following:
+
+*Espresso* – Entry point to interactions with views (via onView() and onData()). Also exposes APIs that are not necessarily tied to any view, such as pressBack().
+*ViewMatchers* – A collection of objects that implement the Matcher<? super View> interface. You can pass one or more of these to the onView() method to locate a view within the current view hierarchy.
+*ViewActions* – A collection of ViewAction objects that can be passed to the ViewInteraction.perform() method, such as click().
+*ViewAssertions* – A collection of ViewAssertion objects that can be passed the ViewInteraction.check() method. Most of the time, you will use the matches assertion, which uses a View matcher to assert the state of the currently selected view.
+
 ## Machers
 
 ![Hooks](images/matchers.png)
