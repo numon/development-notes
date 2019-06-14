@@ -33,77 +33,41 @@ We can write
 
 ## Example 
 ```java
-import android.support.test.rule.ActivityTestRule
-import android.support.test.runner.AndroidJUnit4
-import org.junit.runner.RunWith
-import android.support.test.espresso.Espresso;
-import android.support.test.espresso.action.ViewActions
-import android.support.test.espresso.assertion.ViewAssertions.matches
-import android.support.test.espresso.matcher.ViewMatchers.*
+package com.package.model.page;
 
-@RunWith(AndroidJUnit4::class)
-class MainActivityInstrumentationTest {
+import com.package.model.R;
+import com.package.model.view.activity.EnrollmentActivity;
+
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import androidx.test.filters.LargeTest;
+import androidx.test.rule.ActivityTestRule;
+import androidx.test.runner.AndroidJUnit4;
+
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.typeText;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withHint;
+
+@LargeTest
+@RunWith(AndroidJUnit4.class)
+public class EnrollmentActivityTest {
 
     @Rule
-    @JvmField
-    public val rule  = ActivityTestRule(MainActivity::class.java)
-
-    private val username_tobe_typed="Ajesh"
-    private val correct_password ="password"
-    private val wrong_password = "passme123"
+    public ActivityTestRule<EnrollmentActivity> mActivityTestRule = new ActivityTestRule<>(EnrollmentActivity.class);
 
     @Test
-    fun login_success(){
-        Log.e("@Test","Performing login success test")
-        Espresso.onView((withId(R.id.user_name)))
-                .perform(ViewActions.typeText(username_tobe_typed))
-
-        Espresso.onView(withId(R.id.password))
-                .perform(ViewActions.typeText(correct_password))
-
-        Espresso.onView(withId(R.id.login_button))
-                .perform(ViewActions.click())
-
-        Espresso.onView(withId(R.id.login_result))
-                .check(matches(withText(R.string.login_success)))
+    public void enrollmentActivityTest() {
+        onView(withId(R.id.buttonContinue)).check(matches(isDisplayed()));
+        onView(withId(R.id.buttonContinue)).perform(click());
+        onView(withHint(R.string.password_username_placeholder)).perform(typeText("dmytros"));
+        onView(withHint(R.string.password_password_placeholder)).perform(typeText("text"));
     }
 
-    @Test
-    fun login_failure(){
-        Log.e("@Test","Performing login failure test")
-        Espresso.onView((withId(R.id.user_name)))
-                .perform(ViewActions.typeText(username_tobe_typed))
-
-        Espresso.onView(withId(R.id.password))
-                .perform(ViewActions.typeText(wrong_password))
-
-        Espresso.onView(withId(R.id.login_button))
-                .perform(ViewActions.click())
-
-        Espresso.onView(withId(R.id.login_result))
-                .check(matches(withText(R.string.login_failed)))
-    }
-}
-```
-
-```java
-public void testActionBarOverflow() {
-    // Make sure we hide the contextual action bar.
-    onView(withId(R.id.hide_contextual_action_bar))
-        .perform(click());
-
-    // Open the options menu OR open the overflow menu, depending on whether
-    // the device has a hardware or software overflow menu button.
-    openActionBarOverflowOrOptionsMenu(
-            ApplicationProvider.getApplicationContext());
-
-    // Click the item.
-    onView(withText("World"))
-        .perform(click());
-
-    // Verify that we have really clicked on the icon by checking
-    // the TextView content.
-    onView(withId(R.id.text_action_bar_result))
-        .check(matches(withText("World")));
 }
 ```
