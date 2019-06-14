@@ -65,8 +65,8 @@ public class EnrollmentActivityTest {
     public void enrollmentActivityTest() {
         onView(withId(R.id.buttonContinue)).check(matches(isDisplayed()));
         onView(withId(R.id.buttonContinue)).perform(click());
-        onView(withHint(R.string.password_username_placeholder)).perform(typeText("dmytros"));
-        onView(withHint(R.string.password_password_placeholder)).perform(typeText("text"));
+        onView(withHint(R.string.password_username_placeholder)).perform(typeText("testlogin"));
+        onView(withHint(R.string.password_password_placeholder)).perform(typeText("testpassword"));
     }
 
 }
