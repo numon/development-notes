@@ -6,3 +6,4 @@ There are 6 types of annotations that can be applied to the methods used inside 
 ## Machers
 
 ![Hooks](images/matchers.png)
+
