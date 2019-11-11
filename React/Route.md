@@ -12,6 +12,15 @@ Simple code:
 ```
 
 ```jsx harmony
+    <Switch /> - only one Route load 
+```
+
+
+```jsx harmony
+    this.props.history.push() - works as active link 
+```
+
+```jsx harmony
     <Route path="/" exact render={()=><h1>Home</h1>} />
     <Route path="/" exact component={Posts} />
     <Route path="/:id" component={post} />
@@ -26,15 +35,19 @@ Simple code:
       search: '?quick-search=true'
     }>Home</Link>
     
+    this.props.match.url + '/new-post'
+    
 ```
 
 ```jsx harmony
+    //for styling 
     <NavLink to='/' activeClassName='new-active'>Home</Link>
     
 ```
 
 HOC to get all props from Router component
 ```jsx harmony
+    // add props with Route - history
     withRouter(news); 
 ```
 
