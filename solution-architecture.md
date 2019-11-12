@@ -24,7 +24,9 @@
 
 - Quality attributes
    `Patterns for fault tolerant software` - Book
+   
    `Software architecture in Practice` - book
+  
   
   
  FE Performace tactics
