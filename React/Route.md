@@ -25,6 +25,7 @@ Simple code:
     <Route path="/" exact component={Posts} />
     <Route path="/:id" component={post} />
     <Route path = {this.protps.math.url + '/:id'} />
+    <Route render={()=> <h1>Not found</h1>} />
 ```
 
 ```jsx harmony
