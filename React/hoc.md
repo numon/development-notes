@@ -37,6 +37,11 @@ const NewPost = asyncComponent(() => {
 });
 
 <Route path='news' component={NewPost} />
+//----
+
+const Post = React.lazy(() => import('./Post'));
+
+<Route render={()=><Suspense fallback={<div>Loading...</div>}><Post /></Suspense>} />
 
 ```
 
