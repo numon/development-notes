@@ -7,6 +7,5 @@ const inputHandler = (event, inputID) => {
   updatedElement.value = event.target.value;
   updatedForm[inputID] = updatedElement;
   this.setState({form: updatedForm});
-
 }
-```javascript
+```
