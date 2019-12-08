@@ -4,6 +4,8 @@
 
 Component -> Dispatches -> Action -> Reducers -> Central Store -> triggers Subscription -> Components
 
+Immutable Update Patterns on reduxjs.org: http://redux.js.org/docs/recipes/reducers/ImmutableUpdatePatterns.html
+
 
 ## Redux example
 
@@ -49,6 +51,7 @@ store.dispatch({
 ```
 
 ## React-redux 
+
 ```jsx harmony
 import { Provider } from 'react-redux'
   <Provider store=store>
@@ -69,5 +72,34 @@ const mapDispatchToProps = dispatch => {
 
 export defautl connect(mapStateToProps, mapDispatchToProps)(Counter)
 
+// merge reducer
+
+import { createStore, combineReducers } from 'redux';
+
+const rootReducer = combineReducers({
+  one: firstReducer,
+  two: secondReducer
+});
+
+const state = createStore(rootReducer);
+
 ```
+## Update nested state element
+```jsx harmony
+
+function updateVeryNestedField(state, action) {
+    return {
+        ...state,
+        first : {
+            ...state.first,
+            second : {
+                ...state.first.second,
+                [action.someId] : {
+                    ...state.first.second[action.someId],
+                    fourth : action.someValue
+                }
+            }
+        }
+    }
+}
 
