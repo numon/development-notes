@@ -46,6 +46,28 @@ store.dispatch({
 });
 
 
+```
 
+## React-redux 
+```jsx harmony
+import { Provider } from 'react-redux'
+  <Provider store=store>
+    <App />
+  </Provider>
+  
+const mapStateToProps = (state) => {
+  return {
+    globalState: state
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    incCount: () => dispatch({type: 'INCREMENT'})
+  }
+}
+
+export defautl connect(mapStateToProps, mapDispatchToProps)(Counter)
 
 ```
+
