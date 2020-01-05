@@ -24,6 +24,8 @@
   can use multiple times 
   useeffect(()=> {}); - will run every time when render function run
   
+   If your effect returns a function, React will run it when it is time to clean up:
+  
 ## useCallBack
   
   ```javascript
