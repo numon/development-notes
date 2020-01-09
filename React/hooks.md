@@ -27,9 +27,10 @@
    If your effect returns a function, React will run it when it is time to clean up:
   
 ## useCallBack
+  useCallback returns a memoized callback
   
   ```javascript
-const Counter = () => {
+  const Counter = () => {
   const [count, setCount] = useState(0)
   const [otherCounter, setOtherCounter] = useState(0)
   
@@ -98,6 +99,25 @@ const Counter = () => {
 ## useContext
 
 ## useMemo
+ useMemo returns a memoized value
+ ```javascript 
+ const App = () => {
+    const fooFunction = () => {
+        return 'Foo is just Food without D'
+    }
+
+    const useMemoResult = React.useMemo(fooFunction, [])
+    const useCallbackResult = React.useCallback(fooFunction, [])
+
+    console.log('useMemoResult: ', useMemoResult)
+    console.log('useCallbackResult: ', useCallbackResult)
+
+    return <p>Foo is just food without D</p>
+}
+// RESULT -> React.useMemo runs the fooFunction which returns a string Foo is just Food without D while React.useCallback just returns a fooFunction without calling it
+```
+
 
 ## Custom Hooks
 
+all custom hooks can be found here - https://nikgraf.github.io/react-hooks/
