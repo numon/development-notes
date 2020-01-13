@@ -57,7 +57,7 @@ store.dispatch({
 export const FETCH_INIT = 'FETCH_INIT';
 export const FETCH_SUCCESS = 'FETCH_SUCCESS';
 
-// action creators 
+// Action Creators 
 export const fetchInit = () => ({ type: actionType.FETCH_INIT });
 
 export const addArtsObject = (data) => ({
@@ -69,6 +69,20 @@ export const addArtsObject = (data) => ({
 export const fetchError = () => ({
   type: actionType.FETCH_SUCCESS,
 });
+
+export const fetchArts = (sortConfig) => (dispatch) => {
+  const fetchData = async () => {
+    dispatch(fetchInit());
+    try {
+      const result = await axios(generateURL(sortConfig));
+      console.log(result.data);
+      dispatch(addArtsObject(result.data));
+    } catch (error) {
+      dispatch(fetchError());
+    }
+  };
+  fetchData();
+};
 
 
 // Reducer
