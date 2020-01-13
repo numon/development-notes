@@ -75,7 +75,6 @@ export const fetchArts = (sortConfig) => (dispatch) => {
     dispatch(fetchInit());
     try {
       const result = await axios(generateURL(sortConfig));
-      console.log(result.data);
       dispatch(addArtsObject(result.data));
     } catch (error) {
       dispatch(fetchError());
