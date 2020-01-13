@@ -1,0 +1,3 @@
+- border-radius:50% - radius for component
+- box-sizing: border-box - exactly the width we defined
+- text-rendering - property in CSS allows you to choose quality of text over speed (or vice versa) allowing you to fine tune optimization by suggesting to the browser as to how it should render text on the screen
