@@ -168,4 +168,26 @@ function updateVeryNestedField(state, action) {
         }
     }
 }
+```
+## HOOKS
+ ### useSelector and useDispatch
+```javascript
+  const {
+    artObjects, isError, isLoading, sortConfig,
+  } = useSelector((state) => ({
+    artObjects: state.artObjects,
+    isError: state.isError,
+    isLoading: state.isLoading,
+    sortConfig: state.sortConfig,
+  }));
 
+  const dispatch = useDispatch();
+  const getArtObjects = useCallback(
+    () => dispatch(fetchArts(sortConfig)),
+    [dispatch, sortConfig],
+  );
+
+  useEffect(() => {
+    getArtObjects(sortConfig);
+  }, [getArtObjects, sortConfig]);
+  ```
