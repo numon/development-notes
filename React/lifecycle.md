@@ -56,7 +56,7 @@ getSnapshotBeforeUpdate(prevProps, prevState) {
 It is called right before the DOM is updated. The value that is returned from getSnapshotBeforeUpdate() is passed on to componentDidUpdate().
 Keep in mind that this method should also be used rarely or not used at all.
 
-![Lifecycle](./images/lifeFULL.pngg)
+![Lifecycle](./images/lifeFULL.png)
 
 
 ![Component Lifecycle Creation](./images/lifeCreating.png)
