@@ -1,9 +1,14 @@
 # S.O.L.I.D. STANDS FOR:
-S — Single responsibility principle
+S — Single responsibility principle 
+
 O — Open closed principle
+
 L — Liskov substitution principle
+
 I — Interface segregation principle
+
 D — Dependency Inversion principle
+
 
 ## Single responsibility principle
 A class should have one and only one reason to change, meaning that a class should only have one job.
