@@ -97,6 +97,38 @@ const Counter = () => {
 ```
 
 ## useContext
+ ```javascript 
+import React from "react";
+const ContextCount = React.createContext();
+
+//----------
+import ContextCount from "./CountContext";
+
+function App() {
+  return (
+    <ContextCount.Provider value={2}>
+    <div className="App">
+      <ComponentA />
+    </div>
+    </ContextCount.Provider>
+  );
+}
+//------------
+const ComponentA = () => {
+  //const count = useContext(ContextCount);
+  return (
+    <ContextCount.Consumer>
+      {count => (
+        <div>Component A - {count}</div>
+      )}
+      </ContextCount.Consumer>
+  )
+};
+
+
+
+```
+
 
 ## useMemo
  useMemo returns a memoized value
