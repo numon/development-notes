@@ -1,8 +1,3 @@
-# development-notes
-
-
----
-
 # Categories
 
 * [Javascript](#Javascript)
@@ -32,15 +27,26 @@
 * Worker threads
 
 # TODO:
-* finished with JS
 * Reg Exp
 * SELENIUM WebDriver
-* Cucumber
 * Python
 * JMeter
-* load testing
 * SQL
-* Linux
-* AWS
 * Web Socket 
 * Web workers
+
+### In progress:
+#### Front 
+- CSS + Flex
+- React saga
+- React router
+- Check videos
+
+#### Testing
+- Performance meetup
+- new library for automation
+
+#### JS
+-SOLID
+-pattern
+
