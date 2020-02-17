@@ -52,4 +52,23 @@ function* fetchPostsWithTimeout() {
   else
     yield put({type: 'TIMEOUT_ERROR'})
 }
+
+export function* watchAndLog() {
+  while (true) {
+    const action = yield take('*');
+    const state = yield select();
+
+    console.log('action', action);
+    console.log('state after', state);
+  }
+}
+
+export function* loginFlow() {
+  while (true) {
+    yield take('LOGIN');
+    console.log('take FETCH_DATA');
+    yield take('LOGOUT');
+    console.log('take ADD_DATA');
+
+  }
 ```
