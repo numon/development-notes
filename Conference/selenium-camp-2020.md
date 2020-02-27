@@ -3,7 +3,6 @@
 link https://github.com/SeleniumHQ/selenium/projects/2
 
 Task - 19, (
-- config node, 
 - support graphQL, 
 - grid UI, 
 - upgrade connection to http/2
