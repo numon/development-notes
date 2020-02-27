@@ -23,6 +23,7 @@ ability use  Chrome DevTools protocol "@wdio/devtools-service"
 - Performance Testing (getMetrics, getDiagnostics, enablePerformanceAudits)
 - Device Emulation
 - Event Listener
+- run `browser.cdp`
 
 #### React component 
 ```javascript
