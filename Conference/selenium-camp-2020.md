@@ -44,4 +44,14 @@ How to handle 12 version and localization ? Mixin ?
 - Working with Moon
 
 ## Espresso
-- alex tiurin github/alex-tiurin
+- alex tiurin https://github.com/alex-tiurin has own DSL
+
+## Selenium in Kubernetes
+
+google cloud platform - https://cloud.google.com/
+
+### Moon 
+You can run up to 4 (four) parallel pods for free  
+link https://github.com/aerokube/moon
+  
+https://github.com/aerokube/selenoid 
