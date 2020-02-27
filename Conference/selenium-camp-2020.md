@@ -39,9 +39,6 @@ test('it should be displayed', () => {
 How to handle 12 version and localization ? Mixin ?
 - https://github.com/Xotabu4/versioned-pageobjects
 
-## OPS
-- link aerokube - http://aerocube.com
-- Working with Moon
 
 ## Espresso
 - alex tiurin https://github.com/alex-tiurin has own DSL
