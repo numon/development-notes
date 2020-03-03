@@ -25,6 +25,15 @@
 
 - docker run -e ENV_VARIABLE=production images_name
 - docker run --mount type=bind,source=/data/mysql,target=/var/lib/mysql mysql
+- docker run -d --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql
+- docker run -v /opt/data:/var/lib/mysql -d --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql.
+
+ - docker stop $(docker ps -q)
+ - docker rm $(docker ps -a -q)
+ - docker rmi $(docker images -q) 
+ 
+- docker network ls
+-  docker network create --driver bridge --subnet 182.18.0.1/24 --gateway 182.18.0.1 wp-mysql-network
 
 
 ## Docker file
@@ -73,3 +82,10 @@ networks:
   - frontend
   - backend
 ```
+
+## Docker swarm
+- docker swarm init
+- docker service create --replicas=3 image_name
+
+## Kubernetes
+ Cluster -> Nodes
