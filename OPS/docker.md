@@ -16,9 +16,9 @@
 - docker run --name webapp nginx:1.14-alpine
 - docker inspect
 
-- docker exec container_name cat /etc/hosts
+- `docker exec container_name cat /etc/hosts` - execute command in container
 
-- docker build .
+- `docker build .` - build container from Docker file
 - `docker build -t ./ image_name` - build with specific name
 - `docker login`
 - `docker push image_name` - push to docker hub
