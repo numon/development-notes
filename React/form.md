@@ -60,6 +60,38 @@ const Login = () => {
   );
 };
 
-export default Login;
 
+
+## Handle error in form
+export default Login;
+<div className="content">
+      <Formik
+        initialValues={{
+          user: '',
+          password: '',
+        }}
+        onSubmit={formSubmitHandler}
+        validationSchema={loginValidationSchema}
+      >
+        {({ errors, touched }) => (
+          <Form className="forms">
+            <FormikField
+              error={errors.user && touched.user}
+              name="user"
+              type="input"
+              placeholder="Username"
+            />
+            <FormikField
+              error={errors.password && touched.password}
+              name="password"
+              type="password"
+              placeholder="Password"
+            />
+            <Button type="submit" variant="contained" color="primary" size="large">
+              Login
+            </Button>
+          </Form>
+        )}
+      </Formik>
+    </div>
 ```
