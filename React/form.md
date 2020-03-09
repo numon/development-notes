@@ -60,10 +60,10 @@ const Login = () => {
   );
 };
 
-
+```
 
 ## Handle error in form
-export default Login;
+
 <div className="content">
       <Formik
         initialValues={{
