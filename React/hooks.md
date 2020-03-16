@@ -70,6 +70,22 @@
   
 ## useRef 
  This hook allows us to access a DOM element imperatively.
+ ```javascript
+ import React, { useRef } from "react";
+
+const CustomTextInput = () => {
+  const textInput = useRef();
+
+  focusTextInput = () => textInput.current.focus();
+
+  return (
+    <>
+      <input type="text" ref={textInput} />
+      <button onClick={focusTextInput}>Focus the text input</button>
+    </>
+  );
+}
+```
  
 ## useReducer
 This hook is used to manage state
