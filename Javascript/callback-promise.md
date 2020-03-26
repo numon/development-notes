@@ -155,3 +155,42 @@ function printAll() {
 
 printAll()
 ```
+### callback within callback (call itself)
+```javascript
+
+function printString(string, indx, cb){
+      if(indx == 27) {
+        cb('err')
+      }
+      cb(null, string)
+}
+
+function callback(err, str) {
+ 
+  if(err) {
+    console.log('done');
+    return
+  }
+  console.log(str);
+}
+
+function printAll(){
+  let arr = [...Array(26)].map((val, i) => String.fromCharCode(i + 65)); 
+  // console.log(arr) // ["A", "B", "C", "D" ... "Z"]
+
+  let index = 0;
+  setTimeout(function cbOfcb() {
+    let array = arr
+    if(index < 27){
+      printString(array[index++], index, callback); // pass string , index , callback
+      cbOfcb(); // call itself
+    }
+
+    
+  }, 1000)
+
+
+}
+
+printAll()
+```
