@@ -1,6 +1,6 @@
 ## Custom audio tag
 
-```jsx
+```jsx harmony
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
