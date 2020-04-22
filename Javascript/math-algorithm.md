@@ -2,7 +2,6 @@
 ## Arithmetic progression
 ```javascript
 function arrCount(arr){
-  return (arr.n*(arr.n+1)/2)
-}
+  return (arr.length*(arr.length+1)/2)
 }
 ```
