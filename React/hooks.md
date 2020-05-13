@@ -164,7 +164,8 @@ const ComponentA = () => {
 }
 // RESULT -> React.useMemo runs the fooFunction which returns a string Foo is just Food without D while React.useCallback just returns a fooFunction without calling it
 ```
-
+## useLayoutEffect
+The signature is identical to useEffect, but it fires synchronously after all DOM mutations. Use this to read layout from the DOM and synchronously re-render. Updates scheduled inside useLayoutEffect will be flushed synchronously, before the browser has a chance to paint.
 
 ## Custom Hooks
 
