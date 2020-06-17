@@ -3,7 +3,6 @@
 ## Jekinsfile example
 
 ```
-Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent any 
     triggers {
@@ -137,5 +136,3 @@ timestamps {
 } // end timestamps
 
 ```
-
-## Jenkins 
