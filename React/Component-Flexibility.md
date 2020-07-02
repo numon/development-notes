@@ -77,3 +77,23 @@ export default function List(
   )
 }
 ```
+
+using current component
+```jsx
+    <div className="root">
+      <div className="listContainer">
+        <List
+          component={BeautifulListContainer}
+          collapsed={collapsed}
+          toggle={toggle}
+          header={null}
+          label="Bidders"
+          items={pediatricians}
+          limit={limit}
+        />
+      </div>
+      <div className="listContainer">
+        <List header="Bids on" label="Bidders" items={psychiatrists} />
+      </div>
+    </div>
+```
