@@ -9,6 +9,7 @@ const sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(...middleware)));
 sagaMiddleware.run(sagas);
+```
 
 
 ### example saga
