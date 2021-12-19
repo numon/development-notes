@@ -1,0 +1,72 @@
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+
+stages:
+  - build
+  - integration_tests
+  - metrics
+  - system_tests
+  - pages
+
+cache:
+  paths:
+    - public
+
+build_app:
+  stage: build
+  image: alexpshe/test-examples:maven-allure
+  script:
+    - ./gradlew clean build
+
+unit_test:
+  stage: integration_tests
+  image: alexpshe/test-examples:maven-allure
+  script:
+    - ./gradlew clean test
+  after_script:
+    - '[ ! -d "public" ] && mkdir public'
+    - cp -R $CI_PROJECT_DIR/build/reports/. public
+  artifacts:
+    when: always
+    expire_in: 10 days
+    paths:
+      - public
+
+check_coverage_with_jacoco:
+  stage: metrics
+  image: alexpshe/test-examples:maven-allure
+  script:
+    ./gradlew jacocoTestCoverageVerification
+
+analyze_code_with_qodana:
+  stage: metrics
+  image: docker:stable
+  services:
+    - docker:19.03.12-dind
+  script:
+    - docker run -p 8080:8080 -v $(pwd):/data/project -v $CI_PROJECT_DIR/qodana-result:/data/results/ jetbrains/qodana:latest --save-report
+    - '[ ! -d "public/qodana-report" ] && mkdir public/qodana-report'
+    - cp -R $CI_PROJECT_DIR/qodana-result/report/. public/qodana-report
+  artifacts:
+    when: always
+    expire_in: 10 days
+    paths:
+      - public/qodana-report
+
+system_tests:
+  stage: system_tests
+  trigger:
+    project: alexpshe/allure_ci_example
+    branch: main
+    strategy: depend
+
+pages:
+  stage: pages
+  image: alpine
+  script: echo "Reports were published"
+  artifacts:
+    when: always
+    expire_in: 10 days
+    paths:
+      - public
