@@ -1,0 +1,38 @@
+stages:
+  - build
+  - tests
+  - pages
+
+build_test:
+  stage: build
+  image: alexpshe/test-examples:maven-allure
+  script:
+    - ./gradlew clean build
+
+cache:
+  paths:
+    - public
+
+smoke_test:
+  stage: tests
+  image: alexpshe/test-examples:maven-allure
+  script:
+    - ./gradlew clean test
+  after_script:
+    - ./gradlew allureReport
+    - cp -R $CI_PROJECT_DIR/build/reports/. public
+  artifacts:
+    when: always
+    expire_in: 10 days
+    paths:
+      - public
+
+pages:
+  stage: pages
+  image: alpine
+  script: echo "Reports were published"
+  artifacts:
+    when: always
+    expire_in: 10 days
+    paths:
+      - public
