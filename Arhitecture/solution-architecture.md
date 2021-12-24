@@ -49,3 +49,14 @@
   
   `Software Engineering institute - Carnegie Mellon`
   
+  ## What is good architecture
+  
+  - Supports and covers all business goals
+  - Product of a single architect of small group
+  - FUnction requirements and prioritized list of quality attribute
+  - Well documented
+  - circulated to the systems stakehilders 
+  - analyzed for application quantitative measures
+  - shoul lend itself to incremental implementation 
+  - all resources concerns should be worked outm documented and expalined to the development team
+  
