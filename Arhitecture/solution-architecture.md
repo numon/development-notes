@@ -59,4 +59,7 @@
   - analyzed for application quantitative measures
   - shoul lend itself to incremental implementation 
   - all resources concerns should be worked outm documented and expalined to the development team
+
+![image](https://user-images.githubusercontent.com/186825/147360138-d47b84a1-d214-4351-80d1-29b867475111.png)
+
   
